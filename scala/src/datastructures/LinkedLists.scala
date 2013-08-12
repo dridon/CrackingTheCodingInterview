@@ -5,7 +5,9 @@ import scala.annotation.tailrec
 
 /** Container object for solutions to questions about Linked Lists */
 object LinkedLists {
-  val LL = MutableLinkedList
+  // facilitates pattern matching
+  private val LL = MutableLinkedList
+
   /** Question 2.1
     * Removes any duplicate entries within the list passed in as an argument
     *
@@ -56,7 +58,7 @@ object LinkedLists {
 
     // forwards lead and lag node until the lead hits the end and returns the lag element
     @tailrec def getLastLagElement(lead: MutableLinkedList[A], lag:MutableLinkedList[A]): A = lead match {
-      case scala.collection.mutable.LinkedList() => lag.head
+      case LL() => lag.head
       case _ => getLastLagElement(lead.next, lag.next)
     }
 
@@ -108,17 +110,17 @@ object LinkedLists {
                                 carry: Int): MutableLinkedList[Int] = (num1,num2) match {
 
       // if both lists were  the same size return the new number
-      case (scala.collection.mutable.LinkedList(), scala.collection.mutable.LinkedList()) => acc.reverse
+      case (LL(), LL()) => acc.reverse
 
       // if the lists are not the same size then ensure the last carries are carried out
-      case (scala.collection.mutable.LinkedList(), _) => {
+      case (LL(), _) => {
         if(carry > 0 ){
           val sumCarry = sumDigits(0, num2.elem, carry)
           sumNumbersAsListsHelper(num1, num2.next, MutableLinkedList(sumCarry._1) append acc, sumCarry._2)
         }
         else acc.reverse append num2
       }
-      case (_, scala.collection.mutable.LinkedList()) => {
+      case (_, LL()) => {
         if(carry > 0 ){
           val sumCarry = sumDigits(num1.elem, 0, carry)
           sumNumbersAsListsHelper(num1.next, num2, MutableLinkedList(sumCarry._1) append acc, sumCarry._2)
