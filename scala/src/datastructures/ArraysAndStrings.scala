@@ -24,8 +24,7 @@ object ArraysAndStrings {
    * @param s string to be checked for unique characters 
    * @return true/false value indicating string uniqueness 
    *
-   * @throws NullPointerException if the string s is null
-   */
+   * @throws NullPointerException if the string s is null */
   def allUniqueCharacters(s: String): Boolean = {
 
     // a string of size 1 is always unique 
@@ -80,8 +79,7 @@ object ArraysAndStrings {
    * @param cString a C-Style string
    * @return reverse of cString    
    *
-   * @throws NullPointerException if the array cString is null
-   */
+   * @throws NullPointerException if the array cString is null */
   def reverseCStyleString(cString: Array[Char]): Array[Char] = {
 
     // cString as character list 
@@ -103,8 +101,7 @@ object ArraysAndStrings {
    *
    * @param s the string with potential duplicate characters
    * @return a version of s without any repeating characters  
-   * @throws NullPointerException if the string s is null 
-   */
+   * @throws NullPointerException if the string s is null */
   def withoutDuplicates(s: String): String = {
     // character set size, increase for unicode strings 
     val characterSetSize = 256
@@ -135,8 +132,7 @@ object ArraysAndStrings {
    *
    * @param string1 first string to be compared
    * @param string2 second string to be compared
-   * @return boolean indicating whether string1 and string2 are anagrams of each other  
-   */
+   * @return boolean indicating whether string1 and string2 are anagrams of each other */
   def areAnagrams(string1: String, string2: String): Boolean = {
 
     // sort the string and return an empty string if its null 
@@ -158,8 +154,7 @@ object ArraysAndStrings {
    *
    * @param s the string with spaces to be encoded
    * @return String that requires %20 input
-   * @throws NullPointerException if the string is null
-   */
+   * @throws NullPointerException if the string is null */
   def replaceAllSpacesWithUrlEncoding(s: String): String = {
 
     // get a map of all url encodings
@@ -188,8 +183,7 @@ object ArraysAndStrings {
    * @param matrix a NxN matrix of 32 bit integers representing 4 bytes
    *
    * @throws IllegalArgumentException if the argument is not a nxn matrix 
-   * @throws NullPointerException if the matrix array is null
-   */
+   * @throws NullPointerException if the matrix array is null */
   def rotateMatrix90Degrees(matrix: Array[Array[Int]]): Unit = {
 
     if (matrix == null) throw new NullPointerException("Matrix may not be null")
@@ -241,8 +235,7 @@ object ArraysAndStrings {
    *
    * @param matrix an MxN matrix that may have random zero entries throughout
    *
-   * @throws NullPointerException matrix may not be null
-   */
+   * @throws NullPointerException matrix may not be null */
   def zeroRowColumnOfZeroEntries(matrix: Array[Array[Int]]): Unit = {
     if(matrix == null) throw new NullPointerException
 
@@ -295,8 +288,7 @@ object ArraysAndStrings {
    *
    * @return boolean indicating if string2 is indeed a rotation of string1
    *
-   * @throws NullPointerException if either string1 or string2 is null
-   */
+   * @throws NullPointerException if either string1 or string2 is null */
   def isRotation(string1: String, string2: String): Boolean = {
     if (string1 == null || string2 == null) throw new NullPointerException("Strings may not be null")
 
