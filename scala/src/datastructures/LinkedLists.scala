@@ -5,9 +5,9 @@ import scala.annotation.tailrec
 
 /** Container object for solutions to questions about Linked Lists */
 object LinkedLists {
-
+  val LL = MutableLinkedList
   /** Question 2.1
-    * Removes any duplicate entries within the linkedlist passed in as an argument
+    * Removes any duplicate entries within the list passed in as an argument
     *
     * @param list LinkedList containing possible duplicate parameters */
   def removeDuplicates[A](list: MutableLinkedList[A]): Unit = {
@@ -48,7 +48,7 @@ object LinkedLists {
     // if the list is smaller in length than n, an empty list is returned
     def getLeadNode(list: MutableLinkedList[A], n: Int): MutableLinkedList[A] = {
       @tailrec def getNthLeadNode(list: MutableLinkedList[A], stop: Int, current: Int): MutableLinkedList[A] = list match {
-        case scala.collection.mutable.LinkedList() => MutableLinkedList()
+        case LL() => MutableLinkedList()
         case _ => if (current == stop) list else getNthLeadNode(list.next, stop, current + 1)
       }
       getNthLeadNode(list, n, 0)
@@ -83,7 +83,7 @@ object LinkedLists {
 
   /** Question 2.4
     *
-    * Sums two numbers reprsented in reversed lists and returns the sum in the reversed list
+    * Sums two numbers represented in reversed lists and returns the sum in the reversed list
     * @param num1 the first number represented as a reversed list
     * @param num2 the second number represented as a reversed list
     * @return the sum of the two numbers represented as a reversed */
