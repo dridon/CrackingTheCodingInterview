@@ -73,6 +73,5 @@ class LinkedListsTest extends FunSuite{
 
     assert( circularNode eq list2 )
 
-
   }
 }
