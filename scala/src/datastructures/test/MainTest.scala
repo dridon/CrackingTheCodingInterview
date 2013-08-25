@@ -10,11 +10,16 @@ object MainTest {
     //initialize all tests 
     val arrayAndStringTest = new ArraysAndStringsTest
     val linkedListTest = new LinkedListsTest
+    val stacksandQueuesTest = new StacksAndQueuesTest
     
     // execute all tests
     arrayAndStringTest.execute()
     printHorizontalLine()
+
     linkedListTest.execute()
+    printHorizontalLine()
+
+    stacksandQueuesTest.execute()
     printHorizontalLine()
   }
 

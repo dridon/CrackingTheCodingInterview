@@ -4,7 +4,7 @@ import datastructures.LinkedLists
 import org.scalatest.FunSuite
 import scala.collection.mutable.{ LinkedList => MutableLinkedList}
 
-/** Test class for Arrays and Strings solutions in datastructures.LinkedList */
+/** Test class for LinkedLists solutions in datastructures.LinkedList */
 class LinkedListsTest extends FunSuite{
 
   /** tests if duplicates are removed from the linked list successfully */
