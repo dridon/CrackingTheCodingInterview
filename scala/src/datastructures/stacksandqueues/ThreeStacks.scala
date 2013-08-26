@@ -7,7 +7,8 @@ package datastructures.stacksandqueues
   * User: faiz
   * Date: 19/08/13
   * Time: 5:10 PM */
-class ThreeStacks[A, B, C ](val stackSize:Int  = 1000) {
+
+ class ThreeStacks[A, B, C ](val stackSize:Int  = 1000) {
   // the shared stacks
   val stack1 = SharedStack[A]()
   val stack2 = SharedStack[B]()
@@ -111,7 +112,7 @@ class ThreeStacks[A, B, C ](val stackSize:Int  = 1000) {
       // return a new index if the array isn't full otherwise throw an exception
       def newIndex() : Int = {
         if(nextFreeIndex >= stackSize){
-          throw new Exception("No more room in stack array available")
+          throw new Exception("No more room in stack is available")
         }
         else{
           val index = nextFreeIndex
