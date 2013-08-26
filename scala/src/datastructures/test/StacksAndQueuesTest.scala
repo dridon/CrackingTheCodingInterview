@@ -125,7 +125,30 @@ class StacksAndQueuesTest extends FunSuite{
     assert(setOfStacks.pop() == Some(1))
     assert(setOfStacks.pop() == None)
 
+  }
 
+  /** tests to see if the towers of hanoi problem is solved */
+  test("Towers of Hanoi solved properly"){
+    // towers
+    val source = new Tower("A")
+    val destination = new Tower("B")
+    val spare = new Tower("C")
 
+    // solver
+    val towersOfHanoi = new TowersOfHanoi(0)
+
+    // populate and solve
+    source.populate(5)
+    towersOfHanoi.moveDiscs(5, source, destination, spare)
+
+    // check to see if destination has the right order of discs
+    assert(destination.removeDisc() == Some(Disc(0)))
+    assert(destination.removeDisc() == Some(Disc(1)))
+    assert(destination.removeDisc() == Some(Disc(2)))
+    assert(destination.removeDisc() == Some(Disc(3)))
+    assert(destination.removeDisc() == Some(Disc(4)))
+
+    // total moves for 5 discs should be 31
+    assert(towersOfHanoi.totalMovesUsed() == 31)
   }
 }
