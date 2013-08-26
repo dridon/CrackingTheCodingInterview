@@ -151,4 +151,20 @@ class StacksAndQueuesTest extends FunSuite{
     // total moves for 5 discs should be 31
     assert(towersOfHanoi.totalMovesUsed() == 31)
   }
+
+  /** tests if MyQueue uses two stacks to generate proper queue behaviour*/
+  test("MyQueue behaves properly"){
+    val q = new MyQueue[Int]()
+
+    // load elements
+    q enqueue 1
+    q enqueue 2
+    q enqueue 3
+
+    // test to see if they are returned in the right order
+    assert(q.dequeue() == Some(1))
+    assert(q.dequeue() == Some(2))
+    assert(q.dequeue() == Some(3))
+  }
+
 }
