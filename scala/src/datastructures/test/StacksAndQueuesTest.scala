@@ -167,4 +167,20 @@ class StacksAndQueuesTest extends FunSuite{
     assert(q.dequeue() == Some(3))
   }
 
+  /** tests if the stack is sorted */
+  test("Stack sorted properly"){
+    val s = scala.collection.mutable.Stack(7,8,4,6,2,8,1,3)
+    val sorter = new StackSorter
+
+    sorter.sort(s)
+
+    assert(s.pop() == 8)
+    assert(s.pop() == 8)
+    assert(s.pop() == 7)
+    assert(s.pop() == 6)
+    assert(s.pop() == 4)
+    assert(s.pop() == 3)
+    assert(s.pop() == 2)
+    assert(s.pop() == 1)
+  }
 }
