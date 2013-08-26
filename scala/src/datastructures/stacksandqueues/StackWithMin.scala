@@ -2,16 +2,16 @@ package datastructures.stacksandqueues
 
 import scala.collection.mutable.Stack
 /** Question 3.2
- *
- * A stack that keeps track of the minimum value, accessible in O(1) time
- * shorts, ints, longs, floats and doubles are compared through their primitive values
- * all other types need a comparator
- *
- * User: faiz
- * Date: 25/08/13
- * Time: 4:49 PM
- * @param comparator an optional comparator that is needed to ensure that a min value is kept
- */
+  *
+  * A stack that keeps track of the minimum value, accessible in O(1) time
+  * shorts, ints, longs, floats and doubles are compared through their primitive values
+  * all other types need a comparator
+  *
+  * User: faiz
+  * Date: 25/08/13
+  * Time: 4:49 PM
+  * @param comparator an optional comparator that is needed to ensure that a min value is kept
+  */
 class StackWithMin[T](val comparator : Option[(T, T) => Int] = None) {
 
   // a stack to keep track of the minimum values

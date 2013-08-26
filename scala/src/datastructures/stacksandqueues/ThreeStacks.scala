@@ -9,10 +9,40 @@ package datastructures.stacksandqueues
   * Time: 5:10 PM */
 
  class ThreeStacks[A, B, C ](val stackSize:Int  = 1000) {
+  /**
+   * Push a value on to the first stack
+   * @param value value of type A */
+  def push1(value :A): Unit = stack1.push(value)
+
+  /**
+   * Push a value on to the second stack
+   * @param value value of type B */
+  def push2(value: B): Unit = stack2.push(value)
+
+  /**
+   * Push a value on to the third stack
+   * @param value value of type C */
+  def push3(value: C): Unit = stack3.push(value)
+
+  /**
+   * Pops the top value off the first stack
+   * @return Some(value) at the top of the stack, None if the stack is empty */
+  def pop1(): Option[A] = stack1.pop()
+
+  /**
+   * Pops the top value off the second stack
+   * @return Some(value) at the top of the stack, None if the stack is empty */
+  def pop2(): Option[B] = stack2.pop()
+
+  /**
+   * Pops the top value off the second stack
+   * @return Some(value) at the top of the stack, None if the stack is empty */
+  def pop3(): Option[C]  = stack3.pop()
+
   // the shared stacks
-  val stack1 = SharedStack[A]()
-  val stack2 = SharedStack[B]()
-  val stack3 = SharedStack[C]()
+  private val stack1 = SharedStack[A]()
+  private val stack2 = SharedStack[B]()
+  private val stack3 = SharedStack[C]()
 
   // the shared stack class is simply a container for push and pop functions
   class SharedStack[T](val push: T => Unit, val pop: () => Option[T])

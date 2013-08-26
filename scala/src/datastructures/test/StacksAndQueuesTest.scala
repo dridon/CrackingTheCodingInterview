@@ -12,27 +12,27 @@ class StacksAndQueuesTest extends FunSuite{
     val stackSet = new ThreeStacks[Int, String, Double](9)
 
     // in the beginning all stacks should return a none value
-    assert(stackSet.stack1.pop() == None)
-    assert(stackSet.stack2.pop() == None)
-    assert(stackSet.stack3.pop() == None)
+    assert(stackSet.pop1() == None)
+    assert(stackSet.pop1() == None)
+    assert(stackSet.pop1() == None)
 
     // load all the stacks with test values
-    stackSet.stack1 push 1
-    stackSet.stack1 push 2
-    stackSet.stack1 push 3
+    stackSet push1 1
+    stackSet push1 2
+    stackSet push1 3
 
-    stackSet.stack2 push "1"
-    stackSet.stack2 push "2"
-    stackSet.stack2 push "3"
+    stackSet push2 "1"
+    stackSet push2 "2"
+    stackSet push2 "3"
 
-    stackSet.stack3 push 1.0
-    stackSet.stack3 push 2.0
-    stackSet.stack3 push 3.0
+    stackSet push3 1.0
+    stackSet push3 2.0
+    stackSet push3 3.0
 
     // test if the stack obeys the 9 element limit
     assert(
       try{
-        stackSet.stack1 push 1
+        stackSet push1 1
         false
       }
       catch
@@ -42,24 +42,24 @@ class StacksAndQueuesTest extends FunSuite{
     )
 
     // test the first pop
-    assert(stackSet.stack1.pop() == Some(3))
-    assert(stackSet.stack2.pop() == Some("3"))
-    assert(stackSet.stack3.pop() == Some(3.0))
+    assert(stackSet.pop1() == Some(3))
+    assert(stackSet.pop2() == Some("3"))
+    assert(stackSet.pop3() == Some(3.0))
 
     // second pop
-    assert(stackSet.stack1.pop() == Some(2))
-    assert(stackSet.stack2.pop() == Some("2"))
-    assert(stackSet.stack3.pop() == Some(2.0))
+    assert(stackSet.pop1() == Some(2))
+    assert(stackSet.pop2() == Some("2"))
+    assert(stackSet.pop3() == Some(2.0))
 
     // third pop
-    assert(stackSet.stack1.pop() == Some(1))
-    assert(stackSet.stack2.pop() == Some("1"))
-    assert(stackSet.stack3.pop() == Some(1.0))
+    assert(stackSet.pop1() == Some(1))
+    assert(stackSet.pop2() == Some("1"))
+    assert(stackSet.pop3() == Some(1.0))
 
     // ensure the stacks are empty
-    assert(stackSet.stack1.pop() == None)
-    assert(stackSet.stack2.pop() == None)
-    assert(stackSet.stack3.pop() == None)
+    assert(stackSet.pop1() == None)
+    assert(stackSet.pop2() == None)
+    assert(stackSet.pop3() == None)
 
   }
 
@@ -95,6 +95,37 @@ class StacksAndQueuesTest extends FunSuite{
     assert(minStack.min == Some(4))
   }
 
+  /** tests if set of stacks is working properly */
+  test("Set of stacks pushes and pops on sets properly"){
+    // stacks with threshold of 2
+    val setOfStacks = new SetOfStacks[Int](2)
+
+    // first stack
+    setOfStacks push 1
+    setOfStacks push 2
+
+    // second stack
+    setOfStacks push 3
+    setOfStacks push 4
+
+    // third stack
+    setOfStacks push 5
+    setOfStacks push 6
+
+    // test tail pop
+    assert(setOfStacks.pop() == Some(6))
+    assert(setOfStacks.pop() == Some(5))
+
+    // test popAt
+    assert(setOfStacks.popAt(2) == None)
+    assert(setOfStacks.popAt(3) == None)
+    assert(setOfStacks.popAt(0) == Some(2))
+    assert(setOfStacks.pop() == Some(4))
+    assert(setOfStacks.pop() == Some(3))
+    assert(setOfStacks.pop() == Some(1))
+    assert(setOfStacks.pop() == None)
 
 
+
+  }
 }
