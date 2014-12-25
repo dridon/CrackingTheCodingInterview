@@ -1,6 +1,4 @@
-Programming Challenges
-==========================
-
-My solutions to programming challenges that I will be attempting over time.
-
-Algorithms and Datastructures - Solutions to Gale Laakmann's book chapters 1-3 are up.
+#Introduction 
+I practice algorithms on a regular basis. I will be positing my solutions to 
+problems that I will also reference on here. Please feel free to use it as you 
+please so long as the license is honored. 
