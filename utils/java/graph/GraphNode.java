@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Collection;
 
-class GraphNode implements Iterable<GraphNode>, Cloneable {
+public class GraphNode implements Iterable<GraphNode>, Cloneable {
     private ArrayList<GraphNode> childNodes;
 
     public GraphNode() {

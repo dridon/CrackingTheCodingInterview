@@ -1,6 +1,6 @@
 package utils.java.graph;
 import java.util.Random;
-class RandomGraphGenerator implements GraphGenerator {
+public class RandomGraphGenerator implements GraphGenerator {
     
     public GraphNode genGraph(int adjacencyList[][]) {
         GraphNode nodeArray[] = new GraphNode[adjacencyList.length];
