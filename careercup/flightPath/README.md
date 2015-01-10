@@ -21,4 +21,4 @@ vector<string> findPath(vector<string> airports)
 
 The airports (nodes) cannot be duplicated and the path should print all the airports (nodes)
 
-** source: ** http://www.careercup.com/question?id=5768610725232640
+source: http://www.careercup.com/question?id=5768610725232640
